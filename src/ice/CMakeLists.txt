@@ -56,12 +56,6 @@ endif()
 find_package(Threads REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC Threads::Threads)
 
-find_package(OpenSSL 1.0 REQUIRED)
-target_link_libraries(${PROJECT_NAME} PUBLIC OpenSSL::SSL OpenSSL::Crypto)
-
-find_package(ZLIB 1.2 REQUIRED)
-target_link_libraries(${PROJECT_NAME} PUBLIC ZLIB::ZLIB)
-
 if(WIN32)
   target_link_libraries(${PROJECT_NAME} PUBLIC ws2_32 mswsock)
 endif()
